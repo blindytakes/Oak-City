@@ -69,7 +69,8 @@ export default function ContactForm() {
           <option>Website only</option>
           <option>Website + Photography</option>
           <option>Website + Video</option>
-          <option>Full package (Web + Video + Photo)</option>
+          <option>Website + AI Integration</option>
+          <option>Full package (Web + Video + Photo + AI)</option>
           <option>Not sure yet — let&apos;s talk</option>
         </select>
       </div>

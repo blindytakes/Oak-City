@@ -1,6 +1,7 @@
 import Nav from "@/components/Nav";
 import ScrollReveal from "@/components/ScrollReveal";
 import ContactForm from "@/components/ContactForm";
+import SiteGrader from "@/components/SiteGrader";
 
 const services = [
   { icon: "⚡", title: "Custom Websites", desc: "Hand-coded, mobile-first sites that load in under a second. No WordPress, no page builders, no bloat." },
@@ -33,61 +34,35 @@ export default function Home() {
 
       {/* ===== HERO ===== */}
       <section className="relative min-h-screen flex items-center px-4 md:px-8 pt-28 pb-16 overflow-hidden">
-        {/* Background */}
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            background: "linear-gradient(170deg, rgba(250,250,247,0.97) 0%, rgba(250,250,247,0.88) 35%, rgba(250,250,247,0.5) 100%), url('https://images.unsplash.com/photo-1568732333411-4be05f659919?w=1800&q=80&fit=crop') center/cover no-repeat",
-          }}
-        />
-        {/* Floating mesh */}
-        <div
-          className="absolute z-0 pointer-events-none rounded-full"
-          style={{
-            top: "-20%", right: "-10%", width: 700, height: 700,
-            background: "radial-gradient(circle at 30% 40%, rgba(42,140,110,0.08) 0%, transparent 60%), radial-gradient(circle at 70% 60%, rgba(42,140,110,0.05) 0%, transparent 50%)",
-            filter: "blur(60px)", animation: "meshFloat 15s ease-in-out infinite",
-          }}
-        />
+        <div className="absolute inset-0 z-0" style={{ background: "linear-gradient(170deg, rgba(250,250,247,0.97) 0%, rgba(250,250,247,0.88) 35%, rgba(250,250,247,0.5) 100%), url('https://images.unsplash.com/photo-1568732333411-4be05f659919?w=1800&q=80&fit=crop') center/cover no-repeat" }} />
+        <div className="absolute z-0 pointer-events-none rounded-full" style={{ top: "-20%", right: "-10%", width: 700, height: 700, background: "radial-gradient(circle at 30% 40%, rgba(42,140,110,0.08) 0%, transparent 60%), radial-gradient(circle at 70% 60%, rgba(42,140,110,0.05) 0%, transparent 50%)", filter: "blur(60px)", animation: "meshFloat 15s ease-in-out infinite" }} />
 
         <div className="relative z-1 max-w-[1200px] mx-auto w-full">
           <div className="flex items-center gap-3 mb-8 opacity-0 animate-[fadeUp_0.8s_ease_0.2s_forwards]">
             <div className="w-10 h-px bg-accent" />
-            <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.75rem", fontWeight: 500, color: "var(--color-accent)", letterSpacing: "1px", textTransform: "uppercase" }}>
-              Raleigh, NC
-            </span>
+            <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.75rem", fontWeight: 500, color: "var(--color-accent)", letterSpacing: "1px", textTransform: "uppercase" }}>Raleigh, NC</span>
           </div>
 
-          <h1
-            className="max-w-[800px] mb-7 opacity-0 animate-[fadeUp_0.8s_ease_0.4s_forwards]"
-            style={{ fontFamily: "var(--font-display)", fontSize: "clamp(3rem, 8vw, 6rem)", fontWeight: 800, lineHeight: 1.05, letterSpacing: "-3px" }}
-          >
-            Your business,<br />
-            <span className="gradient-text">pixel perfect.</span>
+          <h1 className="max-w-[800px] mb-7 opacity-0 animate-[fadeUp_0.8s_ease_0.4s_forwards]" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(3rem, 8vw, 6rem)", fontWeight: 800, lineHeight: 1.05, letterSpacing: "-3px" }}>
+            Your business,<br /><span className="gradient-text">pixel perfect.</span>
           </h1>
 
           <p className="max-w-[500px] mb-10 text-text-secondary opacity-0 animate-[fadeUp_0.8s_ease_0.6s_forwards]" style={{ fontSize: "clamp(1.05rem, 1.8vw, 1.25rem)", lineHeight: 1.75 }}>
-            Websites, video, and photography for local businesses across the Triangle. No templates. No WordPress. Everything hand-crafted, from the code to the camera.
+            Websites, video, photography, and AI for local businesses across the Triangle. No templates. No WordPress. Everything hand-crafted, from the code to the camera — with intelligence built in.
           </p>
 
           <div className="flex gap-4 items-center flex-wrap opacity-0 animate-[fadeUp_0.8s_ease_0.8s_forwards]">
-            <a href="#contact" className="inline-flex items-center gap-2 bg-accent text-white px-8 py-4 rounded-full font-semibold no-underline transition-all hover:bg-accent-light hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(42,140,110,0.25)]" style={{ fontSize: "0.95rem" }}>
-              Start a Project →
-            </a>
-            <a href="#work" className="inline-flex items-center gap-2 bg-bg-white text-text-primary px-8 py-4 rounded-full font-semibold no-underline border border-border transition-all hover:border-accent hover:text-accent hover:-translate-y-0.5" style={{ fontSize: "0.95rem" }}>
-              See Our Work
-            </a>
+            <a href="#contact" className="inline-flex items-center gap-2 bg-accent text-white px-8 py-4 rounded-full font-semibold no-underline transition-all hover:bg-accent-light hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(42,140,110,0.25)]" style={{ fontSize: "0.95rem" }}>Start a Project →</a>
+            <a href="#work" className="inline-flex items-center gap-2 bg-bg-white text-text-primary px-8 py-4 rounded-full font-semibold no-underline border border-border transition-all hover:border-accent hover:text-accent hover:-translate-y-0.5" style={{ fontSize: "0.95rem" }}>See Our Work</a>
           </div>
 
-          {/* Marquee */}
           <div className="mt-14 py-5 border-t border-b border-border overflow-hidden opacity-0 animate-[fadeUp_0.8s_ease_1s_forwards]">
             <div className="flex gap-8 w-max" style={{ animation: "marquee 30s linear infinite" }}>
               {[...Array(2)].map((_, i) => (
                 <div key={i} className="flex gap-8">
-                  {["Web Design", "Video Production", "Brand Photography", "Local SEO", "Google Business", "Social Content"].map((item) => (
+                  {["Web Design", "Video Production", "Brand Photography", "AI Integration", "Local SEO", "Google Business", "Social Content"].map((item) => (
                     <span key={`${i}-${item}`} className="flex items-center gap-8 whitespace-nowrap text-text-muted uppercase tracking-wider" style={{ fontFamily: "var(--font-display)", fontSize: "0.85rem", fontWeight: 600 }}>
-                      {item}
-                      <span className="text-accent text-[0.4rem]">◆</span>
+                      {item}<span className="text-accent text-[0.4rem]">◆</span>
                     </span>
                   ))}
                 </div>
@@ -97,7 +72,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== THREE PILLARS ===== */}
+      {/* ===== SITE GRADER TEASER ===== */}
+      <SiteGrader variant="teaser" />
+
+      {/* ===== FOUR PILLARS ===== */}
       <div className="bg-bg-white border-t border-b border-border-light py-16 md:py-28 px-4 md:px-8" id="services">
         <div className="max-w-[1200px] mx-auto">
           <ScrollReveal>
@@ -107,20 +85,21 @@ export default function Home() {
           </ScrollReveal>
           <ScrollReveal>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4.5vw, 3.25rem)", fontWeight: 800, lineHeight: 1.12, letterSpacing: "-2px", marginBottom: "1rem" }}>
-              Web. Video. Photo.<br />One team. One vision.
+              Web. Video. Photo. AI.<br />One team. One vision.
             </h2>
           </ScrollReveal>
           <ScrollReveal>
             <p className="text-text-secondary max-w-[560px] mb-12" style={{ fontSize: "1.1rem", lineHeight: 1.7 }}>
-              Your restaurant doesn&apos;t just need a website. It needs a 30-second hero video, great photos for Google, and a site that ties it all together. We do all three.
+              Your restaurant doesn&apos;t just need a website. It needs video, photos, and a site smart enough to answer your customers at 2am. We build all of it.
             </p>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
             {[
               { num: "01 — WEB", title: "Custom Websites", desc: "Hand-coded, mobile-first sites that load in under a second. No WordPress, no page builders, no bloat.", items: ["100% custom code", "Mobile-first responsive design", "Google Business + local SEO", "Hosting & maintenance included"], bg: "from-[#E3F0EC] to-[#C8E2D8]", visual: "code" },
               { num: "02 — VIDEO", title: "Video Production", desc: "Short-form video that brings your business to life. Homepage heroes, social clips, Google Business video tours.", items: ["30-60 second brand videos", "Social media content", "Google Business video", "Professional editing & color"], bg: "from-[#E8EDF5] to-[#D0D9EB]", visual: "play" },
               { num: "03 — PHOTO", title: "Brand Photography", desc: "Professional photos for your site, Google listing, social profiles, and menus. No more blurry iPhone shots.", items: ["Interior & exterior shots", "Food & product photography", "Team headshots", "Optimized for web & social"], bg: "from-[#F0EBE3] to-[#E2D8C8]", visual: "lens" },
+              { num: "04 — AI", title: "AI That Works For You", desc: "Your website stops being a brochure and starts being your smartest employee. Answering questions, booking appointments, capturing leads — even while you sleep.", items: ["24/7 AI chat for customer questions", "Smart lead qualification", "Automated appointment booking", "AI-powered SEO content"], bg: "from-[#EDE3F0] to-[#D8C8E2]", visual: "ai" },
             ].map((pillar, i) => (
               <ScrollReveal key={pillar.title} delay={i} className="h-full">
                 <div className="bg-bg border border-border-light rounded-[20px] overflow-hidden transition-all duration-400 hover:-translate-y-1.5 hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] hover:border-accent-border h-full">
@@ -142,6 +121,25 @@ export default function Home() {
                       {pillar.visual === "lens" && (
                         <div className="w-[60px] h-[60px] border-[3px] border-[rgba(0,0,0,0.15)] rounded-full relative">
                           <div className="absolute top-1/2 left-1/2 w-[30px] h-[30px] border-2 border-[rgba(0,0,0,0.1)] rounded-full -translate-x-1/2 -translate-y-1/2" />
+                        </div>
+                      )}
+                      {pillar.visual === "ai" && (
+                        <div className="flex flex-col gap-2 w-[65%]">
+                          <div className="bg-[rgba(0,0,0,0.08)] rounded-xl rounded-bl-sm px-3 py-2 self-start" style={{ maxWidth: "80%" }}>
+                            <div className="flex gap-1.5 items-center">
+                              <div className="w-1.5 h-1.5 rounded-full bg-[rgba(0,0,0,0.2)] animate-pulse" />
+                              <div className="w-1.5 h-1.5 rounded-full bg-[rgba(0,0,0,0.2)] animate-pulse" style={{ animationDelay: "0.2s" }} />
+                              <div className="w-1.5 h-1.5 rounded-full bg-[rgba(0,0,0,0.2)] animate-pulse" style={{ animationDelay: "0.4s" }} />
+                            </div>
+                          </div>
+                          <div className="bg-[rgba(42,140,110,0.15)] rounded-xl rounded-br-sm px-3 py-2 self-end" style={{ maxWidth: "85%" }}>
+                            <div className="h-2 w-16 rounded bg-[rgba(42,140,110,0.25)] mb-1" />
+                            <div className="h-2 w-12 rounded bg-[rgba(42,140,110,0.18)]" />
+                          </div>
+                          <div className="bg-[rgba(0,0,0,0.08)] rounded-xl rounded-bl-sm px-3 py-2 self-start" style={{ maxWidth: "70%" }}>
+                            <div className="h-2 w-20 rounded bg-[rgba(0,0,0,0.12)] mb-1" />
+                            <div className="h-2 w-14 rounded bg-[rgba(0,0,0,0.08)]" />
+                          </div>
                         </div>
                       )}
                     </div>
@@ -189,9 +187,7 @@ export default function Home() {
           ].map((card, i) => (
             <ScrollReveal key={card.type} delay={i}>
               <div className={`rounded-2xl p-9 ${card.type === "slow" ? "bg-danger-bg border border-[rgba(214,69,69,0.1)]" : "bg-accent-bg border border-accent-border"}`}>
-                <p className={`mb-4 ${card.type === "slow" ? "text-danger" : "text-accent"}`} style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "2px" }}>
-                  {card.label}
-                </p>
+                <p className={`mb-4 ${card.type === "slow" ? "text-danger" : "text-accent"}`} style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "2px" }}>{card.label}</p>
                 <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.1rem", fontWeight: 700, marginBottom: "1.25rem" }}>{card.title}</h3>
                 {card.metrics.map((m) => (
                   <div key={m.l}>
@@ -214,6 +210,56 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== AI CALLOUT ===== */}
+      <div className="bg-bg-white border-t border-b border-border-light py-16 md:py-28 px-4 md:px-8">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+            <ScrollReveal>
+              <div>
+                <p className="flex items-center gap-3 mb-4" style={{ fontFamily: "var(--font-mono)", fontSize: "0.72rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "2.5px", color: "var(--color-accent)" }}>
+                  <span className="w-6 h-px bg-accent inline-block" />AI-Powered
+                </p>
+                <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4.5vw, 3.25rem)", fontWeight: 800, lineHeight: 1.12, letterSpacing: "-2px", marginBottom: "1.25rem" }}>
+                  Your website doesn&apos;t<br />clock out at 5.
+                </h2>
+                <p className="text-text-secondary mb-6" style={{ fontSize: "1.05rem", lineHeight: 1.8 }}>
+                  Most business websites just sit there. Ours <strong className="text-text-primary">think</strong>. We embed AI directly into your site so it answers customer questions, qualifies leads, and books appointments — <strong className="text-text-primary">24 hours a day, 7 days a week</strong>, while you focus on running your business.
+                </p>
+                <p className="text-text-secondary" style={{ fontSize: "1.05rem", lineHeight: 1.8 }}>
+                  &ldquo;Do you take walk-ins?&rdquo; &ldquo;What are your hours on Sunday?&rdquo; &ldquo;How much is a men&apos;s cut?&rdquo; — your site handles it all instantly, in natural conversation. No chatbot menus. No &ldquo;please hold.&rdquo; Just answers.
+                </p>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={1}>
+              <div className="bg-bg rounded-[20px] border border-border p-6 md:p-8">
+                <div className="flex items-center gap-2 mb-6">
+                  <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                  <span className="text-text-muted text-xs font-medium" style={{ fontFamily: "var(--font-mono)", letterSpacing: "1px" }}>LIVE ON YOUR SITE</span>
+                </div>
+                <div className="flex flex-col gap-3">
+                  <div className="self-start bg-[rgba(0,0,0,0.04)] rounded-2xl rounded-bl-sm px-4 py-3 max-w-[85%]">
+                    <p className="text-sm text-text-secondary">Hey! Do you guys do color corrections? And how much would that run me?</p>
+                  </div>
+                  <div className="self-end bg-accent text-white rounded-2xl rounded-br-sm px-4 py-3 max-w-[85%]">
+                    <p className="text-sm opacity-95">Yes we do! Color corrections start at $85 and typically take about 90 minutes. Want me to find you an open appointment this week?</p>
+                  </div>
+                  <div className="self-start bg-[rgba(0,0,0,0.04)] rounded-2xl rounded-bl-sm px-4 py-3 max-w-[85%]">
+                    <p className="text-sm text-text-secondary">That would be great, I&apos;m free Thursday afternoon</p>
+                  </div>
+                  <div className="self-end bg-accent text-white rounded-2xl rounded-br-sm px-4 py-3 max-w-[85%]">
+                    <p className="text-sm opacity-95">I&apos;ve got a 2:30 PM slot on Thursday with Sarah. Want me to book that for you?</p>
+                  </div>
+                </div>
+                <div className="mt-5 pt-4 border-t border-border-light flex items-center gap-2">
+                  <span className="text-[0.7rem] text-text-muted" style={{ fontFamily: "var(--font-mono)" }}>11:47 PM</span>
+                  <span className="text-[0.7rem] text-text-muted">· Customer converted while you were asleep</span>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </div>
+
       {/* ===== NO WORDPRESS ===== */}
       <div className="bg-bg-white border-t border-b border-border-light py-16 md:py-28 px-4 md:px-8">
         <div className="max-w-[1200px] mx-auto">
@@ -227,7 +273,6 @@ export default function Home() {
               100% custom code. Zero bloat.
             </h2>
           </ScrollReveal>
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
             <ScrollReveal>
               <div className="flex flex-col gap-3">
@@ -272,7 +317,6 @@ export default function Home() {
               Built for real businesses<br />in the Triangle.
             </h2>
           </ScrollReveal>
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-12">
             {portfolio.map((project, i) => (
               <ScrollReveal key={project.title} delay={i % 4}>
@@ -291,25 +335,19 @@ export default function Home() {
                         <div className="h-[5px] rounded bg-[#E0E0E0]" style={{ width: "70%" }} />
                       </div>
                     </div>
-                    {project.live && (
-                      <span className="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-[0.6rem] font-bold tracking-wider uppercase">LIVE</span>
-                    )}
+                    {project.live && (<span className="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-[0.6rem] font-bold tracking-wider uppercase">LIVE</span>)}
                   </div>
                   <div className="p-6">
                     <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.1rem", fontWeight: 700, marginBottom: "0.25rem" }}>{project.title}</h3>
                     <p className="text-text-muted text-[0.82rem]">{project.desc}</p>
                     <div className="flex gap-1.5 mt-3 flex-wrap">
-                      {project.tags.map((tag) => (
-                        <span key={tag} className="bg-accent-bg text-accent px-3 py-1 rounded-full text-[0.68rem] font-semibold">{tag}</span>
-                      ))}
+                      {project.tags.map((tag) => (<span key={tag} className="bg-accent-bg text-accent px-3 py-1 rounded-full text-[0.68rem] font-semibold">{tag}</span>))}
                     </div>
                   </div>
                 </div>
               </ScrollReveal>
             ))}
           </div>
-
-          {/* Testimonial */}
           <ScrollReveal>
             <div className="max-w-[700px] mx-auto mt-14 text-center">
               <p className="text-lg leading-relaxed text-text-secondary italic mb-6 relative" style={{ fontSize: "1.2rem", lineHeight: 1.8 }}>
@@ -340,7 +378,6 @@ export default function Home() {
             From conversation to launch<br />in <span className="text-accent">14 days</span>.
           </h2>
         </ScrollReveal>
-
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-12">
           {[
             { n: 1, title: "Discovery", desc: "We talk about your business, goals, and what's not working. Free, zero pressure." },
@@ -349,9 +386,7 @@ export default function Home() {
             { n: 4, title: "Grow", desc: "Monthly updates, fresh content, and SEO improvements that keep customers coming." },
           ].map((step, i) => (
             <ScrollReveal key={step.n} delay={i} className="text-center py-8 px-5 relative">
-              <div className="w-12 h-12 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-5" style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "1.1rem" }}>
-                {step.n}
-              </div>
+              <div className="w-12 h-12 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-5" style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "1.1rem" }}>{step.n}</div>
               <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.05rem", fontWeight: 700, marginBottom: "0.5rem" }}>{step.title}</h3>
               <p className="text-text-muted text-sm" style={{ lineHeight: 1.6 }}>{step.desc}</p>
             </ScrollReveal>
@@ -368,46 +403,28 @@ export default function Home() {
             </p>
           </ScrollReveal>
           <ScrollReveal>
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4.5vw, 3.25rem)", fontWeight: 800, lineHeight: 1.12, letterSpacing: "-2px", marginBottom: "1rem" }}>
-              Honest pricing. No surprises.
-            </h2>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4.5vw, 3.25rem)", fontWeight: 800, lineHeight: 1.12, letterSpacing: "-2px", marginBottom: "1rem" }}>Honest pricing. No surprises.</h2>
           </ScrollReveal>
           <ScrollReveal>
-            <p className="text-text-secondary max-w-[560px] mb-12" style={{ fontSize: "1.1rem", lineHeight: 1.7 }}>
-              No hidden fees. No &ldquo;request a quote&rdquo; runaround. Here&apos;s what it costs.
-            </p>
+            <p className="text-text-secondary max-w-[560px] mb-12" style={{ fontSize: "1.1rem", lineHeight: 1.7 }}>No hidden fees. No &ldquo;request a quote&rdquo; runaround. Here&apos;s what it costs.</p>
           </ScrollReveal>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
               { tier: "Starter", price: "$1,500", monthly: "+ $79/mo hosting & support", desc: "Custom site for businesses getting started online.", features: ["Custom single-page site", "Mobile-responsive", "Contact form", "Google Business setup", "Basic SEO", "Hosting included"], featured: false },
-              { tier: "Growth", price: "$3,500", monthly: "+ $129/mo hosting & maintenance", desc: "Full media package. Most businesses start here.", features: ["Multi-page custom site", "Brand photography session", "30-second hero video", "Google Business optimization", "Full SEO setup", "Monthly content updates"], featured: true },
-              { tier: "Pro", price: "$6,000", monthly: "+ $199/mo hosting & strategy", desc: "The full package with ongoing content creation.", features: ["Unlimited pages + CMS", "Full photo shoot", "60-second brand video", "Social media content pack", "Online ordering / menus", "Quarterly strategy calls"], featured: false },
+              { tier: "Growth", price: "$3,500", monthly: "+ $129/mo hosting & maintenance", desc: "Full media package. Most businesses start here.", features: ["Multi-page custom site", "Brand photography session", "30-second hero video", "AI chat widget", "Google Business optimization", "Full SEO setup"], featured: true },
+              { tier: "Pro", price: "$6,000", monthly: "+ $199/mo hosting & strategy", desc: "The full package with AI, content, and ongoing strategy.", features: ["Unlimited pages + CMS", "Full photo shoot + brand video", "AI chat + appointment booking", "Smart lead qualification", "Social media content pack", "Quarterly strategy calls"], featured: false },
             ].map((plan, i) => (
               <ScrollReveal key={plan.tier} delay={i}>
                 <div className={`bg-bg border rounded-[20px] p-9 relative transition-all duration-400 hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] ${plan.featured ? "border-2 border-accent shadow-[0_0_0_4px_rgba(42,140,110,0.06)]" : "border-border"}`}>
-                  {plan.featured && (
-                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-white px-4 py-1 rounded-full text-[0.6rem] font-bold tracking-wider" style={{ fontFamily: "var(--font-mono)" }}>MOST POPULAR</span>
-                  )}
+                  {plan.featured && (<span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-white px-4 py-1 rounded-full text-[0.6rem] font-bold tracking-wider" style={{ fontFamily: "var(--font-mono)" }}>MOST POPULAR</span>)}
                   <p className="text-text-muted mb-3" style={{ fontFamily: "var(--font-mono)", fontSize: "0.7rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "2px" }}>{plan.tier}</p>
-                  <div style={{ fontFamily: "var(--font-display)", fontSize: "2.75rem", fontWeight: 800, letterSpacing: "-2px", marginBottom: "0.15rem" }}>
-                    {plan.price} <span className="text-text-muted text-sm font-normal tracking-normal">one-time</span>
-                  </div>
+                  <div style={{ fontFamily: "var(--font-display)", fontSize: "2.75rem", fontWeight: 800, letterSpacing: "-2px", marginBottom: "0.15rem" }}>{plan.price} <span className="text-text-muted text-sm font-normal tracking-normal">one-time</span></div>
                   <p className="text-accent text-xs font-semibold mb-3">{plan.monthly}</p>
                   <p className="text-text-muted text-sm mb-6" style={{ lineHeight: 1.5 }}>{plan.desc}</p>
                   <ul className="list-none flex flex-col gap-2.5 mb-7">
-                    {plan.features.map((f) => (
-                      <li key={f} className="flex items-start gap-2.5 text-text-secondary text-sm leading-snug">
-                        <span className="text-accent font-bold shrink-0">✓</span>{f}
-                      </li>
-                    ))}
+                    {plan.features.map((f) => (<li key={f} className="flex items-start gap-2.5 text-text-secondary text-sm leading-snug"><span className="text-accent font-bold shrink-0">✓</span>{f}</li>))}
                   </ul>
-                  <a
-                    href="#contact"
-                    className={`block text-center py-3.5 rounded-full font-semibold text-sm no-underline transition-all ${plan.featured ? "bg-accent text-white hover:bg-accent-light hover:shadow-[0_8px_25px_rgba(42,140,110,0.25)]" : "bg-bg-white border border-border text-text-primary hover:border-accent hover:text-accent"}`}
-                  >
-                    Get Started{plan.featured ? " →" : ""}
-                  </a>
+                  <a href="#contact" className={`block text-center py-3.5 rounded-full font-semibold text-sm no-underline transition-all ${plan.featured ? "bg-accent text-white hover:bg-accent-light hover:shadow-[0_8px_25px_rgba(42,140,110,0.25)]" : "bg-bg-white border border-border text-text-primary hover:border-accent hover:text-accent"}`}>Get Started{plan.featured ? " →" : ""}</a>
                 </div>
               </ScrollReveal>
             ))}
@@ -423,23 +440,14 @@ export default function Home() {
           </p>
         </ScrollReveal>
         <ScrollReveal>
-          <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4.5vw, 3.25rem)", fontWeight: 800, lineHeight: 1.12, letterSpacing: "-2px", marginBottom: "1rem" }}>
-            Built in the Triangle,<br />for the Triangle.
-          </h2>
+          <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4.5vw, 3.25rem)", fontWeight: 800, lineHeight: 1.12, letterSpacing: "-2px", marginBottom: "1rem" }}>Built in the Triangle,<br />for the Triangle.</h2>
         </ScrollReveal>
-
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14 mt-8">
           <ScrollReveal>
             <div>
-              <p className="text-text-secondary mb-5" style={{ fontSize: "1.05rem", lineHeight: 1.8 }}>
-                Oak City Media is a one-person studio based in <strong className="text-text-primary">Raleigh, NC.</strong> I started it because local businesses deserve better than a bloated WordPress template, stock photos, and a $200/month hosting bill.
-              </p>
-              <p className="text-text-secondary mb-5" style={{ fontSize: "1.05rem", lineHeight: 1.8 }}>
-                My background spans <strong className="text-text-primary">data engineering, product marketing, video editing, and web development</strong> — so I don&apos;t just build pretty sites. I build complete media packages that are strategically designed to rank on Google and convert visitors.
-              </p>
-              <p className="text-text-secondary" style={{ fontSize: "1.05rem", lineHeight: 1.8 }}>
-                When you work with me, <strong className="text-text-primary">you work with me.</strong> No account managers, no outsourcing, no runaround.
-              </p>
+              <p className="text-text-secondary mb-5" style={{ fontSize: "1.05rem", lineHeight: 1.8 }}>Oak City Media is a one-person studio based in <strong className="text-text-primary">Raleigh, NC.</strong> I started it because local businesses deserve better than a bloated WordPress template, stock photos, and a $200/month hosting bill.</p>
+              <p className="text-text-secondary mb-5" style={{ fontSize: "1.05rem", lineHeight: 1.8 }}>My background spans <strong className="text-text-primary">data engineering, product marketing, video editing, and web development</strong> — so I don&apos;t just build pretty sites. I build complete media packages that are strategically designed to rank on Google and convert visitors.</p>
+              <p className="text-text-secondary" style={{ fontSize: "1.05rem", lineHeight: 1.8 }}>When you work with me, <strong className="text-text-primary">you work with me.</strong> No account managers, no outsourcing, no runaround.</p>
             </div>
           </ScrollReveal>
           <ScrollReveal delay={1}>
@@ -448,7 +456,7 @@ export default function Home() {
               <ul className="list-none flex flex-col gap-4">
                 {[
                   { icon: "⚡", title: "Speed obsessed", desc: "Sites load in under a second. Not 6. Not 4. Under one." },
-                  { icon: "🎬", title: "One team, everything", desc: "Web, video, and photo from one person who gets your brand." },
+                  { icon: "🎬", title: "One team, everything", desc: "Web, video, photo, and AI from one person who gets your brand." },
                   { icon: "💰", title: "Transparent pricing", desc: "Prices on the website. No quote requests. No surprises." },
                   { icon: "📍", title: "Genuinely local", desc: "Based in Raleigh. We know the Triangle because we live here." },
                 ].map((v) => (
@@ -477,22 +485,11 @@ export default function Home() {
               <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 800, letterSpacing: "-2px", marginBottom: "1rem", lineHeight: 1.12 }}>
                 Let&apos;s build something<br /><span className="text-accent">your customers love.</span>
               </h2>
-              <p className="text-text-secondary mb-8" style={{ fontSize: "1.05rem", lineHeight: 1.7 }}>
-                Tell us about your business and what you&apos;re looking for. We&apos;ll get back to you within 24 hours.
-              </p>
+              <p className="text-text-secondary mb-8" style={{ fontSize: "1.05rem", lineHeight: 1.7 }}>Tell us about your business and what you&apos;re looking for. We&apos;ll get back to you within 24 hours.</p>
               <div className="flex flex-col gap-4">
-                <div className="flex items-center gap-3 text-text-secondary text-sm">
-                  <div className="w-9 h-9 bg-accent-bg rounded-[10px] flex items-center justify-center text-base">📧</div>
-                  <a href="mailto:hello@oakcitymedia.com" className="text-accent no-underline font-medium">hello@oakcitymedia.com</a>
-                </div>
-                <div className="flex items-center gap-3 text-text-secondary text-sm">
-                  <div className="w-9 h-9 bg-accent-bg rounded-[10px] flex items-center justify-center text-base">📍</div>
-                  Raleigh, NC — Serving the Triangle
-                </div>
-                <div className="flex items-center gap-3 text-text-secondary text-sm">
-                  <div className="w-9 h-9 bg-accent-bg rounded-[10px] flex items-center justify-center text-base">⏱️</div>
-                  Typical response within 24 hours
-                </div>
+                <div className="flex items-center gap-3 text-text-secondary text-sm"><div className="w-9 h-9 bg-accent-bg rounded-[10px] flex items-center justify-center text-base">📧</div><a href="mailto:hello@oakcitymedia.com" className="text-accent no-underline font-medium">hello@oakcitymedia.com</a></div>
+                <div className="flex items-center gap-3 text-text-secondary text-sm"><div className="w-9 h-9 bg-accent-bg rounded-[10px] flex items-center justify-center text-base">📍</div>Raleigh, NC — Serving the Triangle</div>
+                <div className="flex items-center gap-3 text-text-secondary text-sm"><div className="w-9 h-9 bg-accent-bg rounded-[10px] flex items-center justify-center text-base">⏱️</div>Typical response within 24 hours</div>
               </div>
             </div>
           </ScrollReveal>
@@ -514,11 +511,8 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* Mobile sticky CTA */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 z-99 p-3 bg-bg-white border-t border-border">
-        <a href="#contact" className="block text-center bg-accent text-white py-3.5 rounded-full font-bold text-sm no-underline">
-          Get In Touch →
-        </a>
+        <a href="#contact" className="block text-center bg-accent text-white py-3.5 rounded-full font-bold text-sm no-underline">Get In Touch →</a>
       </div>
     </>
   );

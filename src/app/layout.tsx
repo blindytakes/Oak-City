@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Oak City Media — Web, Video & Photo for Raleigh Businesses",
   description:
-    "Hand-coded websites, video production, and brand photography for local businesses across the Triangle. No WordPress. No templates. Everything custom.",
+    "Hand-coded websites, video production, brand photography, and AI integration for local businesses across the Triangle. No WordPress. No templates. Everything custom.",
   keywords: [
     "web design raleigh",
     "raleigh web designer",
